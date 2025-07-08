@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 echo "🔍 Running pre-commit checks..."
 
 # Run lint-staged (includes eslint --fix and prettier)
@@ -9,6 +6,6 @@ npx lint-staged
 
 # Additional strict lint check to ensure no unfixable errors remain
 echo "🔎 Running final lint check with zero warnings..."
-npm run lint:check
+pnpm run lint:check
 
 echo "✅ All pre-commit checks passed!"
