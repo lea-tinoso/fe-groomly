@@ -1,9 +1,17 @@
 import { ClerkProvider } from '@clerk/clerk-react'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-
 import './index.css'
-import App from './App.jsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import Home from './routes/Home.jsx'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+])
 
 // Import your Publishable Key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -15,7 +23,7 @@ if (!PUBLISHABLE_KEY) {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl='/'>
-      <App />
+      <RouterProvider router={router} />
     </ClerkProvider>
   </StrictMode>
 )
