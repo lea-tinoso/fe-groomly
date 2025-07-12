@@ -1,6 +1,7 @@
 import { SignInButton } from '@clerk/clerk-react'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 
+import Features from '@/components/Features'
 import Hero from '@/components/Hero'
 
 const Home = () => {
@@ -30,6 +31,9 @@ const Home = () => {
       </NavigationMenu.Root>
       <div className='container mx-auto px-4 py-8 flex justify-center items-center'>
         <Hero />
+      </div>
+      <div className='container mx-auto px-4 py-8'>
+        <Features />
       </div>
     </>
   )

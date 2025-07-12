@@ -56,7 +56,7 @@ const Hero = () => {
         </span>
       </motion.p>
       <motion.div
-        className='space-x-4 flex justify-center'
+        className='space-x-4 flex justify-center mb-9'
         variants={container}
       >
         <motion.div variants={pop} style={{ display: 'inline-block' }}>
@@ -84,6 +84,18 @@ const Hero = () => {
         >
           How it works
         </motion.a>
+      </motion.div>
+      <motion.div
+        className='flex justify-center'
+        variants={pop}
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+      >
+        <img
+          src='/pet-dashboard.jpeg'
+          alt='Pet Dashboard'
+          className='mx-auto rounded-xl shadow-lg max-w-full h-auto'
+        />
       </motion.div>
     </motion.div>
   )
